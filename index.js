@@ -14,11 +14,18 @@ app.get('/', (req, res) =>{
 app.get('/cotacao', (req, res) =>{
   const {cotacao, quantidade} = req.query
   const conversao = cotacao*quantidade
-  res.render('cotacao', {
-    cotacao,
-    quantidade,
-    conversao
-  })
+  if(cotacao && quantidade){
+    res.render('cotacao', {
+      cotacao: convert.toMoney(cotacao),
+      quantidade: convert.toMoney(quantidade),
+      conversao: convert.toMoney(conversao)
+    })
+
+  }else{
+    res.render('cotacao',{
+      error: 'valores invalidos'
+    })
+  }
 })
 
 app.listen(3000, ()=> console.log('conectado!'))
