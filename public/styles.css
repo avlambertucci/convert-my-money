@@ -55,13 +55,7 @@ img{
   margin: auto;
 }
 
-.convert-form{
-  /* padding-top: 20px;
-  max-width: 450px;
-  margin-left: 20px;
-  justify-items: center;
-  */
-}
+
 h3{
   font-family: serif;
   font-size: 3rem;
@@ -86,7 +80,6 @@ button{
   font-weight: 500;
   padding: 5px;
   margin: 20px;
-
 }
 .form-group{
   display: flex;
