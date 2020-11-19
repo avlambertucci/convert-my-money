@@ -16,6 +16,7 @@ app.get('/cotacao', (req, res) =>{
   const conversao = cotacao*quantidade
   if(cotacao && quantidade){
     res.render('cotacao', {
+      error: false,
       cotacao: convert.toMoney(cotacao),
       quantidade: convert.toMoney(quantidade),
       conversao: convert.toMoney(conversao)
